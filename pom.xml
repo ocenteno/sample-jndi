@@ -18,6 +18,7 @@
 			<id>ConLink</id>
 		</profile>
 	</profiles>
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -38,7 +39,7 @@
 							<webappDirectory>${project.build.directory}/${project.build.finalName}ConContext</webappDirectory>
 							<webResources>
 								<webResource>
-									<directory>conContext</directory>
+									<directory>context</directory>
 									<include>context.xml</include>
 									<targetPath>META-INF/</targetPath>
 								</webResource>
@@ -58,7 +59,7 @@
 							<webappDirectory>${project.build.directory}/${project.build.finalName}ConLink</webappDirectory>
 							<webResources>
 								<webResource>
-									<directory>conLink</directory>
+									<directory>link</directory>
 									<include>context.xml</include>
 									<targetPath>META-INF/</targetPath>
 								</webResource>
@@ -79,8 +80,9 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>ejemploPoolConexiones</finalName>
+		<finalName>aplicacion-web-java</finalName>
 	</build>
+	
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
