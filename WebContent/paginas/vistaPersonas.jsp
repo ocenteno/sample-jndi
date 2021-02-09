@@ -2,9 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <c:if test="${requestScope.lista eq null}">
 	<jsp:forward page="/paginas/ControlPersonas" />
 </c:if>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,7 +16,7 @@
 <body>
 <fmt:bundle basename="curso.jboss.mvc.i18n.mensajes">
 	<h3>${requestScope.msg}</h3>
-	<jsp:useBean id="p" class="curso.jboss.mvc.modelo.Persona"	scope="request" />
+	<jsp:useBean id="p" class="daw.mvc.modelo.Persona"	scope="request" />
 	<form action="<c:url value="/paginas/ControlPersonas"/>">
 	<table>
 		<tr>
