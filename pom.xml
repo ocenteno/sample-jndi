@@ -25,21 +25,21 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.3</version>
 				<configuration>
-					<classifier>SinContext</classifier>
+					<classifier></classifier>
 					<warSourceDirectory>${basedir}/WebContent</warSourceDirectory>
-					<webappDirectory>${project.build.directory}/${project.build.finalName}SinContext</webappDirectory>
+					<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
 				</configuration>
 				<executions>
 					<execution>
-						<id>ConContext</id>
+						<id>Resource</id>
 						<phase>package</phase>
 						<configuration>
-							<classifier>ConContext</classifier>
+							<classifier>resource</classifier>
 							<warSourceDirectory>${basedir}/WebContent</warSourceDirectory>
-							<webappDirectory>${project.build.directory}/${project.build.finalName}ConContext</webappDirectory>
+							<webappDirectory>${project.build.directory}/${project.build.finalName}-resource</webappDirectory>
 							<webResources>
 								<webResource>
-									<directory>context</directory>
+									<directory>${resourcesDir}/resource</directory>
 									<include>context.xml</include>
 									<targetPath>META-INF/</targetPath>
 								</webResource>
@@ -51,15 +51,15 @@
 						</goals>
 					</execution>
 					<execution>
-						<id>ConLink</id>
+						<id>ResourceLink</id>
 						<phase>package</phase>
 						<configuration>
-							<classifier>ConLink</classifier>
+							<classifier>resource-link</classifier>
 							<warSourceDirectory>${basedir}/WebContent</warSourceDirectory>
-							<webappDirectory>${project.build.directory}/${project.build.finalName}ConLink</webappDirectory>
+							<webappDirectory>${project.build.directory}/${project.build.finalName}-link</webappDirectory>
 							<webResources>
 								<webResource>
-									<directory>link</directory>
+									<directory>${resourcesDir}/resource/link</directory>
 									<include>context.xml</include>
 									<targetPath>META-INF/</targetPath>
 								</webResource>
@@ -108,4 +108,7 @@
 			<scope>compile</scope>
 		</dependency>
 	</dependencies>
+	<properties>
+		<resourcesDir>${project.resources[0].directory}</resourcesDir>
+	</properties>
 </project>

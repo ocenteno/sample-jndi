@@ -15,6 +15,7 @@
 		<servlet-name>ControlPersonas</servlet-name>
 		<url-pattern>/paginas/ControlPersonas</url-pattern>
 	</servlet-mapping>
+	
 	<resource-ref>
 		<res-ref-name>jdbc/cursoLDS</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>
