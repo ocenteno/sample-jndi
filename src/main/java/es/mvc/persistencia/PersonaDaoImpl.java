@@ -1,4 +1,4 @@
-package daw.mvc.persistencia;
+package es.mvc.persistencia;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,16 +9,16 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import daw.mvc.modelo.Persona;
+import es.mvc.modelo.Persona;
 
-public class PersonaDaoMysqlAndOracleDSImpl implements PersonaDao {
+public class PersonaDaoImpl implements PersonaDao {
 	private DataSource ds;
 	
-	public PersonaDaoMysqlAndOracleDSImpl() {
+	public PersonaDaoImpl() {
 	
 	}
 	
-	public PersonaDaoMysqlAndOracleDSImpl(DataSource ds) {
+	public PersonaDaoImpl(DataSource ds) {
 		this.ds = ds;
 	}
 

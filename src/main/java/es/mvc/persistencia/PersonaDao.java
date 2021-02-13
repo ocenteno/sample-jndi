@@ -1,8 +1,8 @@
-package daw.mvc.persistencia;
+package es.mvc.persistencia;
 
 import java.util.List;
 
-import daw.mvc.modelo.Persona;
+import es.mvc.modelo.Persona;
 
 public interface PersonaDao {
 

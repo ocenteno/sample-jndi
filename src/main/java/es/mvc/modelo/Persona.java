@@ -1,4 +1,4 @@
-package daw.mvc.modelo;
+package es.mvc.modelo;
 
 public class Persona {
 	private String dni;

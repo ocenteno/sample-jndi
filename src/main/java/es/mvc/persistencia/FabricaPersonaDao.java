@@ -1,4 +1,4 @@
-package daw.mvc.persistencia;
+package es.mvc.persistencia;
 
 import javax.sql.DataSource;
 
@@ -16,7 +16,7 @@ public class FabricaPersonaDao {
 		return instance;
 	}
 	public PersonaDao getDao(DataSource ds){
-		return new PersonaDaoMysqlAndOracleDSImpl(ds);
+		return new PersonaDaoImpl(ds);
 			
 		
 	}
