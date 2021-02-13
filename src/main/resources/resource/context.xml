@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context swallowOutput="true">
-    <Resource name="jdbc/cursoLDS"
+    <Resource name="jdbc/poolBaseDatos"
           auth="Container"
           type="javax.sql.DataSource"
           factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
@@ -20,8 +20,8 @@
           minEvictableIdleTimeMillis="30000"
           jmxEnabled="true"
           username="root"
-          password="root"
-          driverClassName="com.mysql.jdbc.Driver"
-	  url="jdbc:mysql://localhost:3306/test"
-/>
+          password=""
+          driverClassName="com.mysql.cj.jdbc.Driver"
+		  url="jdbc:mysql://localhost:3306/proyecto"
+	/>
 </Context>

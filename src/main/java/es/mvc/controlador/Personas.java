@@ -1,4 +1,4 @@
-package daw.mvc.controlador;
+package es.mvc.controlador;
 
 import java.io.IOException;
 
@@ -14,14 +14,14 @@ import javax.sql.DataSource;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import daw.mvc.i18n.Mensajes;
-import daw.mvc.modelo.Persona;
-import daw.mvc.persistencia.FabricaPersonaDao;
-import daw.mvc.persistencia.PersonaDao;
+import es.mvc.i18n.Mensajes;
+import es.mvc.modelo.Persona;
+import es.mvc.persistencia.FabricaPersonaDao;
+import es.mvc.persistencia.PersonaDao;
 
-public class ControlPersonas extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {
+public class Personas extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {
 
-	private static final long serialVersionUID = -115739203944836855L;
+	private static final long serialVersionUID = 883694818502604809L;
 	private Log log=LogFactory.getLog(getClass());
 	private DataSource ds;
 
@@ -30,8 +30,8 @@ public class ControlPersonas extends javax.servlet.http.HttpServlet implements j
 		try {
 			log.info("buscando el pool de conexiones");
 			Context ctx=new InitialContext();
-			//ds=(DataSource)ctx.lookup("java:/jdbc/poolServidor");
-			ds=(DataSource) ctx.lookup("java:comp/env/"+"jdbc/cursoLDS");
+			//ds=(DataSource)ctx.lookup("java:/jdbc/poolBaseDatos");
+			ds=(DataSource) ctx.lookup("java:comp/env/"+"jdbc/poolBaseDatos");
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}
@@ -49,24 +49,24 @@ public class ControlPersonas extends javax.servlet.http.HttpServlet implements j
 		
 		//decodificamos el comando
 		if(cmd!=null&&cmd.equalsIgnoreCase("guardar")){ 
-			System.out.println(Mensajes.getString("ControlPersonas.guardando")+p); 
+			System.out.println(Mensajes.getString("personas.guardando")+p); 
 			dao.guardar(p);
-			request.setAttribute("msg", Mensajes.getString("ControlPersonas.guardada"));  //$NON-NLS-2$
+			request.setAttribute("msg", Mensajes.getString("personas.guardada"));  //$NON-NLS-2$
 			request.setAttribute("p", p); 
 		}else if("buscar".equalsIgnoreCase(cmd)){ 
-			log.debug(Mensajes.getString("ControlPersonas.buscando")+p); 
+			log.debug(Mensajes.getString("personas.buscando")+p); 
 			p=dao.buscar(p.getDni());
 			request.setAttribute("p", p);
-			request.setAttribute("msg", Mensajes.getString("ControlPersonas.buscada"));  //$NON-NLS-2$
+			request.setAttribute("msg", Mensajes.getString("personas.buscada"));  //$NON-NLS-2$
 		}else if("borrar".equalsIgnoreCase(cmd)){ 
-			log.debug(Mensajes.getString("ControlPersonas.borrando")+p); 
+			log.debug(Mensajes.getString("personas.borrando")+p); 
 			dao.borrar(p);
 			request.setAttribute("p", new Persona());
-			request.setAttribute("msg", Mensajes.getString("ControlPersonas.borrado"));  //$NON-NLS-2$
+			request.setAttribute("msg", Mensajes.getString("personas.borrado"));  //$NON-NLS-2$
 		}else if("nuevo".equalsIgnoreCase(cmd)){ 
-			log.debug(Mensajes.getString("ControlPersonas.limpiando")); 
+			log.debug(Mensajes.getString("personas.limpiando")); 
 			request.setAttribute("p", new Persona());
-			request.setAttribute("msg", Mensajes.getString("ControlPersonas.limpiando"));  //$NON-NLS-2$
+			request.setAttribute("msg", Mensajes.getString("personas.limpiando"));  //$NON-NLS-2$
 		}
 		//elegimos la siguiente vista a mostrar
 		//rellenando los datos extra a visualizar
