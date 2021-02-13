@@ -6,11 +6,19 @@
 </head>
 
 <body>
-	<h1>Bienvenido a la aplicación Web Java de prueba para DAW</h1>
+	<h1>Bienvenido a la aplicación Web Java de ejemplo para JNDI, Apache y SQL</h1>
 
 	<form action="paginas/vistaPersonas.jsp">
-		<input type="submit" name="Probar" />
+		<input type="submit" value="Probar BD" />
 	</form>
+	<form action="paginas/vistaContenido.jsp">
+		<input type="submit" value="Probar CDN" />
+	</form>
+	<form action="paginas/vistaFicheros.jsp">
+		<input type="submit" value="Probar FTP" />
+	</form>
+	
+	
 
 </body>
 

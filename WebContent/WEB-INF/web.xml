@@ -2,26 +2,55 @@
 <web-app id="WebApp_ID" version="2.4"
 	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-	<display-name>EjemploPoolConexiones</display-name>
+	<display-name>Proyecto Java EE</display-name>
+	
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>	
+	</welcome-file-list>
+	
 	<servlet>
-		<servlet-name>ControlPersonas</servlet-name>
-		<servlet-class>curso.jboss.mvc.controlador.ControlPersonas
-		</servlet-class>
+		<servlet-name>ControladorBD</servlet-name>
+		<servlet-class>es.mvc.controlador.Personas</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ControlPersonas</servlet-name>
-		<url-pattern>/paginas/ControlPersonas</url-pattern>
+		<servlet-name>ControladorBD</servlet-name>
+		<url-pattern>/paginas/Controlador</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ControladorCDN</servlet-name>
+		<servlet-class>es.mvc.controlador.Contenido</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorCDN</servlet-name>
+		<url-pattern>/paginas/Contenido</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ControladorFTP</servlet-name>
+		<servlet-class>es.mvc.controlador.Ficheros</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorFTP</servlet-name>
+		<url-pattern>/paginas/Ficheros</url-pattern>
 	</servlet-mapping>
 	
 	<resource-ref>
-		<res-ref-name>jdbc/cursoLDS</res-ref-name>
+		<res-ref-name>jdbc/recursoDataSource</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>
 		<res-auth>Container</res-auth>
 		<res-sharing-scope>Shareable</res-sharing-scope>
 	</resource-ref>
+	
+	<env-entry>
+		<env-entry-name>jndi/CDN</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+	</env-entry>
+	
+	<env-entry>
+		<env-entry-name>jndi/FTP</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+	</env-entry>
 </web-app>
 
 
