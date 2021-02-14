@@ -19,49 +19,6 @@
 					<warSourceDirectory>${basedir}/WebContent</warSourceDirectory>
 					<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
 				</configuration>
-				<executions>
-					<execution>
-						<id>Resource</id>
-						<!-- B. Fully configured Resource embedded in META-INF, no Server config needed -->
-						<phase>package</phase>
-						<configuration>
-							<classifier>resource</classifier>
-							<warSourceDirectory>${basedir}/WebContent</warSourceDirectory>
-							<webappDirectory>${project.build.directory}/${project.build.finalName}-resource</webappDirectory>
-							<webResources>
-								<webResource>
-									<directory>${resourcesDir}/resource</directory>
-									<include>context.xml</include>
-									<targetPath>META-INF/</targetPath>
-								</webResource>
-							</webResources>
-							<warName></warName>
-						</configuration>
-						<goals>
-							<goal>war</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>ResourceLink</id>
-						<!-- C. Linked Resource embedded in META-INF, must declare it in Server Global -->
-						<phase>package</phase>
-						<configuration>
-							<classifier>resource-link</classifier>
-							<warSourceDirectory>${basedir}/WebContent</warSourceDirectory>
-							<webappDirectory>${project.build.directory}/${project.build.finalName}-link</webappDirectory>
-							<webResources>
-								<webResource>
-									<directory>${resourcesDir}/resource/link</directory>
-									<include>context.xml</include>
-									<targetPath>META-INF/</targetPath>
-								</webResource>
-							</webResources>
-						</configuration>
-						<goals>
-							<goal>war</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
