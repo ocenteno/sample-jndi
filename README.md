@@ -3,6 +3,7 @@ Este proyecto consiste en una aplicación web Java EE con servlets para acceder 
 - Base de Datos
 - FTP
 - CDN (Apache)
+
 El proyecto se encuentra en GitHub: [https://github.com/ocenteno/sample-jndi](https://github.com/ocenteno/sample-jndi)
 
 ## Configuración
