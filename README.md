@@ -18,7 +18,7 @@ La Base de Datos deberá popularse con la siguiente estructura:
 		PRIMARY KEY (dni)
 	);
 
-*IMPORTANTE*. Es vuestra responsabilidad crear el usuario de conexión a la BD y *añadirlo* a la cadena de conexión en el jdbc/poolBaseDatos.
+**IMPORTANTE**. Es vuestra responsabilidad crear el usuario de conexión a la BD y *añadirlo* a la configuración del recurso jdbc/poolBaseDatos.
 
 	
 ### 2. Apache CDN
